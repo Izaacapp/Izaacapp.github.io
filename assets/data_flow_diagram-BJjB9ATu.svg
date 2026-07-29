@@ -1,0 +1,427 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="692pt" height="1299pt" viewBox="0.00 0.00 692.00 1299.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1295.15)">
+<title>GoTrigger_Data_Flow</title>
+<polygon fill="#fafafa" stroke="none" points="-4,4 -4,-1295.15 687.7,-1295.15 687.7,4 -4,4"/>
+<text xml:space="preserve" text-anchor="start" x="174.16" y="-1268.35" font-family="Helvetica Neue" font-weight="bold" font-size="22.00">Go-Trigger Data Flow Architecture</text>
+<text xml:space="preserve" text-anchor="start" x="215.5" y="-1253.55" font-family="Helvetica Neue" font-size="14.00">Breach Detection to Automated Remediation</text>
+<g id="clust1" class="cluster">
+<title>cluster_legend</title>
+<polygon fill="#f5f5f5" stroke="#9e9e9e" points="421.7,-1030.35 421.7,-1239.15 675.7,-1239.15 675.7,-1030.35 421.7,-1030.35"/>
+<text xml:space="preserve" text-anchor="middle" x="548.7" y="-1215.35" font-family="Helvetica Neue" font-size="22.00">Flow Types</text>
+</g>
+<!-- UserInput -->
+<g id="node1" class="node">
+<title>UserInput</title>
+<ellipse fill="#4caf50" stroke="black" cx="349.7" cy="-1117.55" rx="63.58" ry="24.32"/>
+<text xml:space="preserve" text-anchor="middle" x="349.7" y="-1120.85" font-family="Helvetica Neue" font-size="11.00" fill="white">User Submits</text>
+<text xml:space="preserve" text-anchor="middle" x="349.7" y="-1107.65" font-family="Helvetica Neue" font-size="11.00" fill="white">Email/Username</text>
+</g>
+<!-- APIGateway -->
+<g id="node4" class="node">
+<title>APIGateway</title>
+<path fill="#ffc107" stroke="black" d="M385.46,-1002.35C385.46,-1002.35 313.94,-1002.35 313.94,-1002.35 307.94,-1002.35 301.94,-996.35 301.94,-990.35 301.94,-990.35 301.94,-978.35 301.94,-978.35 301.94,-972.35 307.94,-966.35 313.94,-966.35 313.94,-966.35 385.46,-966.35 385.46,-966.35 391.46,-966.35 397.46,-972.35 397.46,-978.35 397.46,-978.35 397.46,-990.35 397.46,-990.35 397.46,-996.35 391.46,-1002.35 385.46,-1002.35"/>
+<text xml:space="preserve" text-anchor="middle" x="349.7" y="-987.65" font-family="Helvetica Neue" font-size="11.00">API Gateway</text>
+<text xml:space="preserve" text-anchor="middle" x="349.7" y="-974.45" font-family="Helvetica Neue" font-size="11.00">JWT + Validation</text>
+</g>
+<!-- UserInput&#45;&gt;APIGateway -->
+<g id="edge1" class="edge">
+<title>UserInput-&gt;APIGateway</title>
+<path fill="none" stroke="#4caf50" stroke-width="3" d="M349.7,-1092.79C349.7,-1071.57 349.7,-1040.32 349.7,-1016.99"/>
+<polygon fill="#4caf50" stroke="#4caf50" stroke-width="3" points="353.2,-1017.19 349.7,-1007.19 346.2,-1017.19 353.2,-1017.19"/>
+<text xml:space="preserve" text-anchor="middle" x="382.9" y="-1013.35" font-family="Helvetica Neue" font-size="10.00">1. Submit Query</text>
+</g>
+<!-- ResultDisplay -->
+<g id="node2" class="node">
+<title>ResultDisplay</title>
+<ellipse fill="#2196f3" stroke="black" cx="67.7" cy="-551.15" rx="67.7" ry="24.32"/>
+<text xml:space="preserve" text-anchor="middle" x="67.7" y="-554.45" font-family="Helvetica Neue" font-size="11.00" fill="white">Results Displayed</text>
+<text xml:space="preserve" text-anchor="middle" x="67.7" y="-541.25" font-family="Helvetica Neue" font-size="11.00" fill="white">to User</text>
+</g>
+<!-- QuarantineZone -->
+<g id="node11" class="node">
+<title>QuarantineZone</title>
+<path fill="#009688" stroke="black" d="M92.81,-483.1C92.81,-483.1 26.59,-483.1 26.59,-483.1 20.59,-483.1 14.59,-477.1 14.59,-471.1 14.59,-471.1 14.59,-459.1 14.59,-459.1 14.59,-453.1 20.59,-447.1 26.59,-447.1 26.59,-447.1 92.81,-447.1 92.81,-447.1 98.81,-447.1 104.81,-453.1 104.81,-459.1 104.81,-459.1 104.81,-471.1 104.81,-471.1 104.81,-477.1 98.81,-483.1 92.81,-483.1"/>
+<text xml:space="preserve" text-anchor="middle" x="59.7" y="-468.4" font-family="Helvetica Neue" font-size="11.00" fill="white">Quarantine Zone</text>
+<text xml:space="preserve" text-anchor="middle" x="59.7" y="-455.2" font-family="Helvetica Neue" font-size="11.00" fill="white">(Staged Review)</text>
+</g>
+<!-- ResultDisplay&#45;&gt;QuarantineZone -->
+<g id="edge19" class="edge">
+<title>ResultDisplay-&gt;QuarantineZone</title>
+<path fill="none" stroke="#009688" stroke-width="3" d="M65.47,-526.74C64.62,-517.75 63.63,-507.33 62.71,-497.7"/>
+<polygon fill="#009688" stroke="#009688" stroke-width="3" points="66.22,-497.67 61.79,-488.04 59.25,-498.33 66.22,-497.67"/>
+<text xml:space="preserve" text-anchor="middle" x="101.61" y="-499.75" font-family="Helvetica Neue" font-size="10.00">10b. High Severity</text>
+</g>
+<!-- IndexedDB -->
+<g id="node24" class="node">
+<title>IndexedDB</title>
+<path fill="#607d8b" stroke="black" d="M187.79,-484.45C187.79,-486.82 170.72,-488.75 149.7,-488.75 128.68,-488.75 111.61,-486.82 111.61,-484.45 111.61,-484.45 111.61,-445.75 111.61,-445.75 111.61,-443.38 128.68,-441.45 149.7,-441.45 170.72,-441.45 187.79,-443.38 187.79,-445.75 187.79,-445.75 187.79,-484.45 187.79,-484.45"/>
+<path fill="none" stroke="black" d="M187.79,-484.45C187.79,-482.08 170.72,-480.15 149.7,-480.15 128.68,-480.15 111.61,-482.08 111.61,-484.45"/>
+<text xml:space="preserve" text-anchor="middle" x="149.7" y="-468.4" font-family="Helvetica Neue" font-size="11.00" fill="white">IndexedDB</text>
+<text xml:space="preserve" text-anchor="middle" x="149.7" y="-455.2" font-family="Helvetica Neue" font-size="11.00" fill="white">(Client Store)</text>
+</g>
+<!-- ResultDisplay&#45;&gt;IndexedDB -->
+<g id="edge18" class="edge">
+<title>ResultDisplay-&gt;IndexedDB</title>
+<path fill="none" stroke="#03a9f4" stroke-width="2" d="M110.99,-532.14C121.34,-526.05 131.47,-518.31 138.7,-508.75 140.46,-506.42 141.94,-503.84 143.19,-501.13"/>
+<polygon fill="#03a9f4" stroke="#03a9f4" stroke-width="2" points="146.49,-502.3 146.32,-491.71 139.84,-500.09 146.49,-502.3"/>
+<text xml:space="preserve" text-anchor="middle" x="167.86" y="-499.75" font-family="Helvetica Neue" font-size="10.00">10a. Persist</text>
+</g>
+<!-- RemediationComplete -->
+<g id="node3" class="node">
+<title>RemediationComplete</title>
+<ellipse fill="#4caf50" stroke="black" cx="111.7" cy="-24.32" rx="51.06" ry="24.32"/>
+<text xml:space="preserve" text-anchor="middle" x="111.7" y="-27.62" font-family="Helvetica Neue" font-size="11.00" fill="white">Remediation</text>
+<text xml:space="preserve" text-anchor="middle" x="111.7" y="-14.42" font-family="Helvetica Neue" font-size="11.00" fill="white">Complete</text>
+</g>
+<!-- CacheCheck -->
+<g id="node5" class="node">
+<title>CacheCheck</title>
+<path fill="#ff9800" stroke="black" d="M276.81,-933.31C276.81,-933.31 224.26,-908.99 224.26,-908.99 218.81,-906.47 218.81,-901.43 224.26,-898.91 224.26,-898.91 276.81,-874.59 276.81,-874.59 282.26,-872.07 293.15,-872.07 298.59,-874.59 298.59,-874.59 351.15,-898.91 351.15,-898.91 356.59,-901.43 356.59,-906.47 351.15,-908.99 351.15,-908.99 298.59,-933.31 298.59,-933.31 293.15,-935.83 282.26,-935.83 276.81,-933.31"/>
+<text xml:space="preserve" text-anchor="middle" x="287.7" y="-907.25" font-family="Helvetica Neue" font-size="11.00">Cache Check</text>
+<text xml:space="preserve" text-anchor="middle" x="287.7" y="-894.05" font-family="Helvetica Neue" font-size="11.00">(Redis)</text>
+</g>
+<!-- APIGateway&#45;&gt;CacheCheck -->
+<g id="edge2" class="edge">
+<title>APIGateway-&gt;CacheCheck</title>
+<path fill="none" stroke="#4caf50" stroke-width="3" d="M335.94,-965.95C330.09,-958.55 323.03,-949.62 316.14,-940.91"/>
+<polygon fill="#4caf50" stroke="#4caf50" stroke-width="3" points="319.07,-938.97 310.12,-933.3 313.58,-943.31 319.07,-938.97"/>
+<text xml:space="preserve" text-anchor="middle" x="361.16" y="-949.35" font-family="Helvetica Neue" font-size="10.00">2. Check Cache</text>
+</g>
+<!-- MariaDB -->
+<g id="node21" class="node">
+<title>MariaDB</title>
+<path fill="#607d8b" stroke="black" d="M297.51,-43.67C297.51,-46.05 282.35,-47.97 263.7,-47.97 245.05,-47.97 229.9,-46.05 229.9,-43.67 229.9,-43.67 229.9,-4.97 229.9,-4.97 229.9,-2.6 245.05,-0.67 263.7,-0.67 282.35,-0.67 297.51,-2.6 297.51,-4.97 297.51,-4.97 297.51,-43.67 297.51,-43.67"/>
+<path fill="none" stroke="black" d="M297.51,-43.67C297.51,-41.3 282.35,-39.37 263.7,-39.37 245.05,-39.37 229.9,-41.3 229.9,-43.67"/>
+<text xml:space="preserve" text-anchor="middle" x="263.7" y="-27.62" font-family="Helvetica Neue" font-size="11.00" fill="white">MariaDB</text>
+<text xml:space="preserve" text-anchor="middle" x="263.7" y="-14.42" font-family="Helvetica Neue" font-size="11.00" fill="white">(User Data)</text>
+</g>
+<!-- APIGateway&#45;&gt;MariaDB -->
+<g id="edge28" class="edge">
+<title>APIGateway-&gt;MariaDB</title>
+<path fill="none" stroke="gray" stroke-width="2" stroke-dasharray="1,5" d="M385.67,-966.16C388.63,-963.81 391.38,-961.22 393.7,-958.35 409.39,-939 410.7,-929.86 410.7,-904.95 410.7,-904.95 410.7,-904.95 410.7,-93.65 410.7,-48.76 353.64,-33.29 310.62,-28"/>
+<polygon fill="gray" stroke="gray" stroke-width="2" points="311.12,-24.53 300.81,-26.97 310.39,-31.49 311.12,-24.53"/>
+<text xml:space="preserve" text-anchor="middle" x="418.76" y="-499.75" font-family="Helvetica Neue" font-size="10.00">Log</text>
+</g>
+<!-- CacheCheck&#45;&gt;ResultDisplay -->
+<g id="edge3" class="edge">
+<title>CacheCheck-&gt;ResultDisplay</title>
+<path fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,2" d="M235.68,-893.19C176.42,-880.56 87.7,-856.34 87.7,-824.55 87.7,-824.55 87.7,-824.55 87.7,-630.55 87.7,-616.18 84.51,-600.77 80.67,-587.45"/>
+<polygon fill="#2196f3" stroke="#2196f3" stroke-width="2" points="84.14,-586.8 77.79,-578.31 77.46,-588.9 84.14,-586.8"/>
+<text xml:space="preserve" text-anchor="middle" x="115.05" y="-724.55" font-family="Helvetica Neue" font-size="10.00">3a. Cache Hit</text>
+</g>
+<!-- BreachQuery -->
+<g id="node6" class="node">
+<title>BreachQuery</title>
+<path fill="#9c27b0" stroke="black" d="M315.92,-841.55C315.92,-841.55 259.48,-841.55 259.48,-841.55 253.48,-841.55 247.48,-835.55 247.48,-829.55 247.48,-829.55 247.48,-817.55 247.48,-817.55 247.48,-811.55 253.48,-805.55 259.48,-805.55 259.48,-805.55 315.92,-805.55 315.92,-805.55 321.92,-805.55 327.92,-811.55 327.92,-817.55 327.92,-817.55 327.92,-829.55 327.92,-829.55 327.92,-835.55 321.92,-841.55 315.92,-841.55"/>
+<text xml:space="preserve" text-anchor="middle" x="287.7" y="-826.85" font-family="Helvetica Neue" font-size="11.00" fill="white">Breach Source</text>
+<text xml:space="preserve" text-anchor="middle" x="287.7" y="-813.65" font-family="Helvetica Neue" font-size="11.00" fill="white">Query Engine</text>
+</g>
+<!-- CacheCheck&#45;&gt;BreachQuery -->
+<g id="edge4" class="edge">
+<title>CacheCheck-&gt;BreachQuery</title>
+<path fill="none" stroke="#ff5722" stroke-width="3" d="M287.7,-869.25C287.7,-864.96 287.7,-860.58 287.7,-856.32"/>
+<polygon fill="#ff5722" stroke="#ff5722" stroke-width="3" points="291.2,-856.36 287.7,-846.36 284.2,-856.36 291.2,-856.36"/>
+<text xml:space="preserve" text-anchor="middle" x="318.67" y="-852.55" font-family="Helvetica Neue" font-size="10.00">3b. Cache Miss</text>
+</g>
+<!-- HIBP -->
+<g id="node17" class="node">
+<title>HIBP</title>
+<path fill="#eceff1" stroke="black" d="M188.47,-777.55C188.47,-777.55 150.93,-777.55 150.93,-777.55 144.93,-777.55 138.93,-771.55 138.93,-765.55 138.93,-765.55 138.93,-753.55 138.93,-753.55 138.93,-747.55 144.93,-741.55 150.93,-741.55 150.93,-741.55 188.47,-741.55 188.47,-741.55 194.47,-741.55 200.47,-747.55 200.47,-753.55 200.47,-753.55 200.47,-765.55 200.47,-765.55 200.47,-771.55 194.47,-777.55 188.47,-777.55"/>
+<text xml:space="preserve" text-anchor="middle" x="169.7" y="-756.25" font-family="Helvetica Neue" font-size="11.00">HIBP API</text>
+</g>
+<!-- BreachQuery&#45;&gt;HIBP -->
+<g id="edge5" class="edge">
+<title>BreachQuery-&gt;HIBP</title>
+<path fill="none" stroke="#9c27b0" stroke-width="2" d="M247.01,-806.31C240.8,-803.54 234.53,-800.58 228.71,-797.55 221.39,-793.73 213.78,-789.32 206.56,-784.91"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="2" points="208.51,-782 198.18,-779.65 204.79,-787.93 208.51,-782"/>
+<text xml:space="preserve" text-anchor="middle" x="246.21" y="-788.55" font-family="Helvetica Neue" font-size="10.00">4. Query</text>
+</g>
+<!-- DeHashed -->
+<g id="node18" class="node">
+<title>DeHashed</title>
+<path fill="#eceff1" stroke="black" d="M277.85,-777.55C277.85,-777.55 219.56,-777.55 219.56,-777.55 213.56,-777.55 207.56,-771.55 207.56,-765.55 207.56,-765.55 207.56,-753.55 207.56,-753.55 207.56,-747.55 213.56,-741.55 219.56,-741.55 219.56,-741.55 277.85,-741.55 277.85,-741.55 283.85,-741.55 289.85,-747.55 289.85,-753.55 289.85,-753.55 289.85,-765.55 289.85,-765.55 289.85,-771.55 283.85,-777.55 277.85,-777.55"/>
+<text xml:space="preserve" text-anchor="middle" x="248.7" y="-756.25" font-family="Helvetica Neue" font-size="11.00">DeHashed API</text>
+</g>
+<!-- BreachQuery&#45;&gt;DeHashed -->
+<g id="edge6" class="edge">
+<title>BreachQuery-&gt;DeHashed</title>
+<path fill="none" stroke="#9c27b0" stroke-width="2" d="M276.84,-805.28C273.54,-800.04 269.83,-794.14 266.22,-788.39"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="2" points="269.41,-786.89 261.12,-780.29 263.48,-790.62 269.41,-786.89"/>
+<text xml:space="preserve" text-anchor="middle" x="289.19" y="-788.55" font-family="Helvetica Neue" font-size="10.00">4. Query</text>
+</g>
+<!-- BreachSources -->
+<g id="node19" class="node">
+<title>BreachSources</title>
+<path fill="#eceff1" stroke="black" d="M360.17,-777.55C360.17,-777.55 309.23,-777.55 309.23,-777.55 303.23,-777.55 297.23,-771.55 297.23,-765.55 297.23,-765.55 297.23,-753.55 297.23,-753.55 297.23,-747.55 303.23,-741.55 309.23,-741.55 309.23,-741.55 360.17,-741.55 360.17,-741.55 366.17,-741.55 372.17,-747.55 372.17,-753.55 372.17,-753.55 372.17,-765.55 372.17,-765.55 372.17,-771.55 366.17,-777.55 360.17,-777.55"/>
+<text xml:space="preserve" text-anchor="middle" x="334.7" y="-762.85" font-family="Helvetica Neue" font-size="11.00">Other Breach</text>
+<text xml:space="preserve" text-anchor="middle" x="334.7" y="-749.65" font-family="Helvetica Neue" font-size="11.00">Sources</text>
+</g>
+<!-- BreachQuery&#45;&gt;BreachSources -->
+<g id="edge7" class="edge">
+<title>BreachQuery-&gt;BreachSources</title>
+<path fill="none" stroke="#9c27b0" stroke-width="2" d="M301.79,-805.14C303.79,-802.61 305.81,-800.02 307.7,-797.55 309.97,-794.59 312.3,-791.47 314.62,-788.35"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="2" points="317.34,-790.56 320.43,-780.42 311.7,-786.42 317.34,-790.56"/>
+<text xml:space="preserve" text-anchor="middle" x="333.51" y="-788.55" font-family="Helvetica Neue" font-size="10.00">4. Query</text>
+</g>
+<!-- BreachQuery&#45;&gt;MariaDB -->
+<g id="edge29" class="edge">
+<title>BreachQuery-&gt;MariaDB</title>
+<path fill="none" stroke="gray" stroke-width="2" stroke-dasharray="1,5" d="M328.41,-813.71C355.34,-805.2 385.7,-789.24 385.7,-760.55 385.7,-760.55 385.7,-760.55 385.7,-93.65 385.7,-57.54 344.52,-40.33 310.01,-32.24"/>
+<polygon fill="gray" stroke="gray" stroke-width="2" points="311.15,-28.91 300.65,-30.28 309.72,-35.76 311.15,-28.91"/>
+<text xml:space="preserve" text-anchor="middle" x="393.76" y="-424.45" font-family="Helvetica Neue" font-size="10.00">Log</text>
+</g>
+<!-- DataNormalization -->
+<g id="node7" class="node">
+<title>DataNormalization</title>
+<path fill="#9c27b0" stroke="black" d="M285.23,-713.55C285.23,-713.55 206.18,-713.55 206.18,-713.55 200.18,-713.55 194.18,-707.55 194.18,-701.55 194.18,-701.55 194.18,-689.55 194.18,-689.55 194.18,-683.55 200.18,-677.55 206.18,-677.55 206.18,-677.55 285.23,-677.55 285.23,-677.55 291.23,-677.55 297.23,-683.55 297.23,-689.55 297.23,-689.55 297.23,-701.55 297.23,-701.55 297.23,-707.55 291.23,-713.55 285.23,-713.55"/>
+<text xml:space="preserve" text-anchor="middle" x="245.7" y="-698.85" font-family="Helvetica Neue" font-size="11.00" fill="white">Data Normalization</text>
+<text xml:space="preserve" text-anchor="middle" x="245.7" y="-685.65" font-family="Helvetica Neue" font-size="11.00" fill="white">&amp; Deduplication</text>
+</g>
+<!-- SeverityScoring -->
+<g id="node8" class="node">
+<title>SeverityScoring</title>
+<path fill="#9c27b0" stroke="black" d="M237.52,-649.55C237.52,-649.55 171.89,-649.55 171.89,-649.55 165.89,-649.55 159.89,-643.55 159.89,-637.55 159.89,-637.55 159.89,-625.55 159.89,-625.55 159.89,-619.55 165.89,-613.55 171.89,-613.55 171.89,-613.55 237.52,-613.55 237.52,-613.55 243.52,-613.55 249.52,-619.55 249.52,-625.55 249.52,-625.55 249.52,-637.55 249.52,-637.55 249.52,-643.55 243.52,-649.55 237.52,-649.55"/>
+<text xml:space="preserve" text-anchor="middle" x="204.7" y="-634.85" font-family="Helvetica Neue" font-size="11.00" fill="white">Severity Scoring</text>
+<text xml:space="preserve" text-anchor="middle" x="204.7" y="-621.65" font-family="Helvetica Neue" font-size="11.00" fill="white">Algorithm</text>
+</g>
+<!-- DataNormalization&#45;&gt;SeverityScoring -->
+<g id="edge11" class="edge">
+<title>DataNormalization-&gt;SeverityScoring</title>
+<path fill="none" stroke="#9c27b0" stroke-width="3" d="M234.28,-677.28C231.08,-672.44 227.51,-667.05 223.99,-661.72"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="3" points="227,-659.92 218.57,-653.51 221.16,-663.79 227,-659.92"/>
+<text xml:space="preserve" text-anchor="middle" x="257.48" y="-660.55" font-family="Helvetica Neue" font-size="10.00">6. Normalized</text>
+</g>
+<!-- SeverityScoring&#45;&gt;ResultDisplay -->
+<g id="edge17" class="edge">
+<title>SeverityScoring-&gt;ResultDisplay</title>
+<path fill="none" stroke="#2196f3" stroke-width="3" d="M172.38,-613.21C167.74,-610.66 163.03,-608.06 158.59,-605.55 143.93,-597.27 128.06,-588.04 113.74,-579.61"/>
+<polygon fill="#2196f3" stroke="#2196f3" stroke-width="3" points="115.94,-576.84 105.55,-574.77 112.38,-582.87 115.94,-576.84"/>
+<text xml:space="preserve" text-anchor="middle" x="179.15" y="-596.55" font-family="Helvetica Neue" font-size="10.00">9. Display</text>
+</g>
+<!-- CacheWrite -->
+<g id="node9" class="node">
+<title>CacheWrite</title>
+<path fill="#03a9f4" stroke="black" d="M238.97,-585.55C238.97,-585.55 176.64,-585.55 176.64,-585.55 170.64,-585.55 162.8,-579.84 160.95,-574.13 160.95,-574.13 146.12,-528.17 146.12,-528.17 144.27,-522.46 148.43,-516.75 154.43,-516.75 154.43,-516.75 216.76,-516.75 216.76,-516.75 222.76,-516.75 230.61,-522.46 232.45,-528.17 232.45,-528.17 247.29,-574.13 247.29,-574.13 249.13,-579.84 244.97,-585.55 238.97,-585.55"/>
+<text xml:space="preserve" text-anchor="middle" x="196.7" y="-554.45" font-family="Helvetica Neue" font-size="11.00" fill="white">Write to</text>
+<text xml:space="preserve" text-anchor="middle" x="196.7" y="-541.25" font-family="Helvetica Neue" font-size="11.00" fill="white">Cache</text>
+</g>
+<!-- SeverityScoring&#45;&gt;CacheWrite -->
+<g id="edge12" class="edge">
+<title>SeverityScoring-&gt;CacheWrite</title>
+<path fill="none" stroke="#03a9f4" stroke-width="3" d="M202.93,-613.15C202.52,-609.13 202.06,-604.67 201.59,-600.04"/>
+<polygon fill="#03a9f4" stroke="#03a9f4" stroke-width="3" points="205.1,-600.02 200.61,-590.42 198.14,-600.73 205.1,-600.02"/>
+<text xml:space="preserve" text-anchor="middle" x="231.69" y="-596.55" font-family="Helvetica Neue" font-size="10.00">7. Scored Data</text>
+</g>
+<!-- DBWrite -->
+<g id="node10" class="node">
+<title>DBWrite</title>
+<path fill="#03a9f4" stroke="black" d="M363.08,-585.55C363.08,-585.55 294.21,-585.55 294.21,-585.55 288.21,-585.55 280.24,-579.88 278.28,-574.21 278.28,-574.21 262.26,-528.08 262.26,-528.08 260.29,-522.42 264.32,-516.75 270.32,-516.75 270.32,-516.75 339.19,-516.75 339.19,-516.75 345.19,-516.75 353.16,-522.42 355.13,-528.08 355.13,-528.08 371.14,-574.21 371.14,-574.21 373.11,-579.88 369.08,-585.55 363.08,-585.55"/>
+<text xml:space="preserve" text-anchor="middle" x="316.7" y="-554.45" font-family="Helvetica Neue" font-size="11.00" fill="white">Store in</text>
+<text xml:space="preserve" text-anchor="middle" x="316.7" y="-541.25" font-family="Helvetica Neue" font-size="11.00" fill="white">Database</text>
+</g>
+<!-- SeverityScoring&#45;&gt;DBWrite -->
+<g id="edge13" class="edge">
+<title>SeverityScoring-&gt;DBWrite</title>
+<path fill="none" stroke="#03a9f4" stroke-width="3" d="M249.92,-613.06C254.36,-610.76 258.7,-608.25 262.7,-605.55 267.12,-602.57 271.48,-599.21 275.7,-595.65"/>
+<polygon fill="#03a9f4" stroke="#03a9f4" stroke-width="3" points="278.03,-598.26 283.11,-588.96 273.34,-593.06 278.03,-598.26"/>
+<text xml:space="preserve" text-anchor="middle" x="307.05" y="-596.55" font-family="Helvetica Neue" font-size="10.00">7. Scored Data</text>
+</g>
+<!-- Redis -->
+<g id="node23" class="node">
+<title>Redis</title>
+<path fill="#607d8b" stroke="black" d="M266.35,-479.83C266.35,-481.63 250.37,-483.1 230.7,-483.1 211.03,-483.1 195.06,-481.63 195.06,-479.83 195.06,-479.83 195.06,-450.37 195.06,-450.37 195.06,-448.57 211.03,-447.1 230.7,-447.1 250.37,-447.1 266.35,-448.57 266.35,-450.37 266.35,-450.37 266.35,-479.83 266.35,-479.83"/>
+<path fill="none" stroke="black" d="M266.35,-479.83C266.35,-478.02 250.37,-476.55 230.7,-476.55 211.03,-476.55 195.06,-478.02 195.06,-479.83"/>
+<text xml:space="preserve" text-anchor="middle" x="230.7" y="-461.8" font-family="Helvetica Neue" font-size="11.00" fill="white">Redis Cache</text>
+</g>
+<!-- CacheWrite&#45;&gt;Redis -->
+<g id="edge14" class="edge">
+<title>CacheWrite-&gt;Redis</title>
+<path fill="none" stroke="#03a9f4" stroke-width="2" d="M210.33,-516.45C213.16,-509.46 216.12,-502.15 218.88,-495.33"/>
+<polygon fill="#03a9f4" stroke="#03a9f4" stroke-width="2" points="222.05,-496.81 222.56,-486.22 215.57,-494.18 222.05,-496.81"/>
+<text xml:space="preserve" text-anchor="middle" x="233.3" y="-499.75" font-family="Helvetica Neue" font-size="10.00">8. Store</text>
+</g>
+<!-- DBWrite&#45;&gt;MariaDB -->
+<g id="edge15" class="edge">
+<title>DBWrite-&gt;MariaDB</title>
+<path fill="none" stroke="#03a9f4" stroke-width="2" d="M293.12,-516.58C284.9,-501.8 277.7,-483.79 277.7,-466.1 277.7,-466.1 277.7,-466.1 277.7,-93.65 277.7,-82.84 276,-71.25 273.78,-60.75"/>
+<polygon fill="#03a9f4" stroke="#03a9f4" stroke-width="2" points="277.21,-60.03 271.48,-51.12 270.4,-61.66 277.21,-60.03"/>
+<text xml:space="preserve" text-anchor="middle" x="293.26" y="-263.65" font-family="Helvetica Neue" font-size="10.00">8. Store</text>
+</g>
+<!-- DuckDB -->
+<g id="node22" class="node">
+<title>DuckDB</title>
+<path fill="#607d8b" stroke="black" d="M374.52,-484.45C374.52,-486.82 355.33,-488.75 331.7,-488.75 308.07,-488.75 288.88,-486.82 288.88,-484.45 288.88,-484.45 288.88,-445.75 288.88,-445.75 288.88,-443.38 308.07,-441.45 331.7,-441.45 355.33,-441.45 374.52,-443.38 374.52,-445.75 374.52,-445.75 374.52,-484.45 374.52,-484.45"/>
+<path fill="none" stroke="black" d="M374.52,-484.45C374.52,-482.08 355.33,-480.15 331.7,-480.15 308.07,-480.15 288.88,-482.08 288.88,-484.45"/>
+<text xml:space="preserve" text-anchor="middle" x="331.7" y="-468.4" font-family="Helvetica Neue" font-size="11.00" fill="white">DuckDB</text>
+<text xml:space="preserve" text-anchor="middle" x="331.7" y="-455.2" font-family="Helvetica Neue" font-size="11.00" fill="white">(Deduplication)</text>
+</g>
+<!-- DBWrite&#45;&gt;DuckDB -->
+<g id="edge16" class="edge">
+<title>DBWrite-&gt;DuckDB</title>
+<path fill="none" stroke="#03a9f4" stroke-width="2" d="M322.72,-516.45C323.58,-511.59 324.48,-506.59 325.35,-501.7"/>
+<polygon fill="#03a9f4" stroke="#03a9f4" stroke-width="2" points="328.73,-502.67 327.04,-492.21 321.84,-501.44 328.73,-502.67"/>
+<text xml:space="preserve" text-anchor="middle" x="341.54" y="-499.75" font-family="Helvetica Neue" font-size="10.00">8. Store</text>
+</g>
+<!-- RemediationQueue -->
+<g id="node13" class="node">
+<title>RemediationQueue</title>
+<path fill="#e91e63" stroke="black" d="M125.87,-413.45C125.87,-413.45 65.53,-413.45 65.53,-413.45 59.53,-413.45 51.13,-407.95 48.73,-402.45 48.73,-402.45 28.29,-355.65 28.29,-355.65 25.89,-350.15 29.49,-344.65 35.49,-344.65 35.49,-344.65 155.91,-344.65 155.91,-344.65 161.91,-344.65 165.51,-350.15 163.11,-355.65 163.11,-355.65 142.67,-402.45 142.67,-402.45 140.27,-407.95 131.87,-413.45 125.87,-413.45"/>
+<text xml:space="preserve" text-anchor="middle" x="95.7" y="-382.35" font-family="Helvetica Neue" font-size="11.00" fill="white">Remediation</text>
+<text xml:space="preserve" text-anchor="middle" x="95.7" y="-369.15" font-family="Helvetica Neue" font-size="11.00" fill="white">Queue</text>
+</g>
+<!-- QuarantineZone&#45;&gt;RemediationQueue -->
+<g id="edge20" class="edge">
+<title>QuarantineZone-&gt;RemediationQueue</title>
+<path fill="none" stroke="#e91e63" stroke-width="3" stroke-dasharray="5,2" d="M67.16,-446.68C69.68,-440.81 72.62,-433.94 75.64,-426.89"/>
+<polygon fill="#e91e63" stroke="#e91e63" stroke-width="3" points="78.76,-428.5 79.48,-417.93 72.32,-425.74 78.76,-428.5"/>
+<text xml:space="preserve" text-anchor="middle" x="105.2" y="-424.45" font-family="Helvetica Neue" font-size="10.00">11. Approved</text>
+</g>
+<!-- QuarantineZone&#45;&gt;MariaDB -->
+<g id="edge31" class="edge">
+<title>QuarantineZone-&gt;MariaDB</title>
+<path fill="none" stroke="gray" stroke-width="2" stroke-dasharray="1,5" d="M96.15,-446.65C100.35,-444.82 104.6,-443.05 108.7,-441.45 172.77,-416.5 250.7,-448.81 250.7,-380.05 250.7,-380.05 250.7,-380.05 250.7,-93.65 250.7,-82.87 252.28,-71.29 254.34,-60.79"/>
+<polygon fill="gray" stroke="gray" stroke-width="2" points="257.73,-61.68 256.47,-51.16 250.9,-60.17 257.73,-61.68"/>
+<text xml:space="preserve" text-anchor="middle" x="258.76" y="-231.65" font-family="Helvetica Neue" font-size="10.00">Log</text>
+</g>
+<!-- PasswordVault -->
+<g id="node12" class="node">
+<title>PasswordVault</title>
+<path fill="#009688" stroke="black" d="M146.95,-112.65C146.95,-112.65 76.45,-112.65 76.45,-112.65 70.45,-112.65 64.45,-106.65 64.45,-100.65 64.45,-100.65 64.45,-88.65 64.45,-88.65 64.45,-82.65 70.45,-76.65 76.45,-76.65 76.45,-76.65 146.95,-76.65 146.95,-76.65 152.95,-76.65 158.95,-82.65 158.95,-88.65 158.95,-88.65 158.95,-100.65 158.95,-100.65 158.95,-106.65 152.95,-112.65 146.95,-112.65"/>
+<text xml:space="preserve" text-anchor="middle" x="111.7" y="-97.95" font-family="Helvetica Neue" font-size="11.00" fill="white">Password Vault</text>
+<text xml:space="preserve" text-anchor="middle" x="111.7" y="-84.75" font-family="Helvetica Neue" font-size="11.00" fill="white">(Encrypted Store)</text>
+</g>
+<!-- PasswordVault&#45;&gt;RemediationComplete -->
+<g id="edge27" class="edge">
+<title>PasswordVault-&gt;RemediationComplete</title>
+<path fill="none" stroke="#4caf50" stroke-width="3" d="M111.7,-76.41C111.7,-72.39 111.7,-67.95 111.7,-63.41"/>
+<polygon fill="#4caf50" stroke="#4caf50" stroke-width="3" points="115.2,-63.55 111.7,-53.55 108.2,-63.55 115.2,-63.55"/>
+<text xml:space="preserve" text-anchor="middle" x="135.03" y="-59.65" font-family="Helvetica Neue" font-size="10.00">18. Success</text>
+</g>
+<!-- PasswordVault&#45;&gt;MariaDB -->
+<g id="edge32" class="edge">
+<title>PasswordVault-&gt;MariaDB</title>
+<path fill="none" stroke="gray" stroke-width="2" stroke-dasharray="1,5" d="M150.45,-76.23C170.91,-67.03 196.16,-55.68 217.62,-46.04"/>
+<polygon fill="gray" stroke="gray" stroke-width="2" points="218.98,-49.26 226.67,-41.97 216.11,-42.88 218.98,-49.26"/>
+<text xml:space="preserve" text-anchor="middle" x="202.26" y="-59.65" font-family="Helvetica Neue" font-size="10.00">Sync</text>
+</g>
+<!-- ContainerSpawn -->
+<g id="node14" class="node">
+<title>ContainerSpawn</title>
+<path fill="#e91e63" stroke="black" d="M152.87,-316.65C152.87,-316.65 80.53,-316.65 80.53,-316.65 74.53,-316.65 68.53,-310.65 68.53,-304.65 68.53,-304.65 68.53,-292.65 68.53,-292.65 68.53,-286.65 74.53,-280.65 80.53,-280.65 80.53,-280.65 152.87,-280.65 152.87,-280.65 158.87,-280.65 164.87,-286.65 164.87,-292.65 164.87,-292.65 164.87,-304.65 164.87,-304.65 164.87,-310.65 158.87,-316.65 152.87,-316.65"/>
+<text xml:space="preserve" text-anchor="middle" x="116.7" y="-301.95" font-family="Helvetica Neue" font-size="11.00" fill="white">Spawn Ephemeral</text>
+<text xml:space="preserve" text-anchor="middle" x="116.7" y="-288.75" font-family="Helvetica Neue" font-size="11.00" fill="white">Container</text>
+</g>
+<!-- RemediationQueue&#45;&gt;ContainerSpawn -->
+<g id="edge21" class="edge">
+<title>RemediationQueue-&gt;ContainerSpawn</title>
+<path fill="none" stroke="#e91e63" stroke-width="3" d="M104.73,-344.35C105.96,-339.76 107.21,-335.08 108.43,-330.55"/>
+<polygon fill="#e91e63" stroke="#e91e63" stroke-width="3" points="111.7,-331.87 110.9,-321.3 104.93,-330.05 111.7,-331.87"/>
+<text xml:space="preserve" text-anchor="middle" x="132.68" y="-327.65" font-family="Helvetica Neue" font-size="10.00">12. Process</text>
+</g>
+<!-- PasswordReset -->
+<g id="node15" class="node">
+<title>PasswordReset</title>
+<path fill="#e91e63" stroke="black" d="M152.87,-252.65C152.87,-252.65 80.53,-252.65 80.53,-252.65 74.53,-252.65 68.53,-246.65 68.53,-240.65 68.53,-240.65 68.53,-228.65 68.53,-228.65 68.53,-222.65 74.53,-216.65 80.53,-216.65 80.53,-216.65 152.87,-216.65 152.87,-216.65 158.87,-216.65 164.87,-222.65 164.87,-228.65 164.87,-228.65 164.87,-240.65 164.87,-240.65 164.87,-246.65 158.87,-252.65 152.87,-252.65"/>
+<text xml:space="preserve" text-anchor="middle" x="116.7" y="-237.95" font-family="Helvetica Neue" font-size="11.00" fill="white">Execute Password</text>
+<text xml:space="preserve" text-anchor="middle" x="116.7" y="-224.75" font-family="Helvetica Neue" font-size="11.00" fill="white">Reset Flow</text>
+</g>
+<!-- ContainerSpawn&#45;&gt;PasswordReset -->
+<g id="edge22" class="edge">
+<title>ContainerSpawn-&gt;PasswordReset</title>
+<path fill="none" stroke="#e91e63" stroke-width="3" d="M116.7,-280.38C116.7,-276.21 116.7,-271.63 116.7,-267.04"/>
+<polygon fill="#e91e63" stroke="#e91e63" stroke-width="3" points="120.2,-267.37 116.7,-257.37 113.2,-267.37 120.2,-267.37"/>
+<text xml:space="preserve" text-anchor="middle" x="140.3" y="-263.65" font-family="Helvetica Neue" font-size="10.00">13. Execute</text>
+</g>
+<!-- ContainerSpawn&#45;&gt;MariaDB -->
+<g id="edge30" class="edge">
+<title>ContainerSpawn-&gt;MariaDB</title>
+<path fill="none" stroke="gray" stroke-width="2" stroke-dasharray="1,5" d="M165.19,-288.8C193.5,-280.52 223.7,-264.85 223.7,-235.65 223.7,-235.65 223.7,-235.65 223.7,-93.65 223.7,-81.33 228.6,-69.27 234.97,-58.79"/>
+<polygon fill="gray" stroke="gray" stroke-width="2" points="237.82,-60.83 240.58,-50.6 232.04,-56.87 237.82,-60.83"/>
+<text xml:space="preserve" text-anchor="middle" x="231.76" y="-167.65" font-family="Helvetica Neue" font-size="10.00">Log</text>
+</g>
+<!-- ContainerDestroy -->
+<g id="node16" class="node">
+<title>ContainerDestroy</title>
+<path fill="#e91e63" stroke="black" d="M92.18,-188.65C92.18,-188.65 19.23,-188.65 19.23,-188.65 13.23,-188.65 7.23,-182.65 7.23,-176.65 7.23,-176.65 7.23,-164.65 7.23,-164.65 7.23,-158.65 13.23,-152.65 19.23,-152.65 19.23,-152.65 92.18,-152.65 92.18,-152.65 98.18,-152.65 104.18,-158.65 104.18,-164.65 104.18,-164.65 104.18,-176.65 104.18,-176.65 104.18,-182.65 98.18,-188.65 92.18,-188.65"/>
+<text xml:space="preserve" text-anchor="middle" x="55.7" y="-173.95" font-family="Helvetica Neue" font-size="11.00" fill="white">Destroy Container</text>
+<text xml:space="preserve" text-anchor="middle" x="55.7" y="-160.75" font-family="Helvetica Neue" font-size="11.00" fill="white">&amp; Clean Up</text>
+</g>
+<!-- PasswordReset&#45;&gt;ContainerDestroy -->
+<g id="edge25" class="edge">
+<title>PasswordReset-&gt;ContainerDestroy</title>
+<path fill="none" stroke="#e91e63" stroke-width="3" d="M69.35,-216.23C66.54,-213.99 63.98,-211.48 61.82,-208.65 60.48,-206.9 59.39,-204.98 58.51,-202.94"/>
+<polygon fill="#e91e63" stroke="#e91e63" stroke-width="3" points="61.93,-202.2 56.23,-193.27 55.12,-203.81 61.93,-202.2"/>
+<text xml:space="preserve" text-anchor="middle" x="88.76" y="-199.65" font-family="Helvetica Neue" font-size="10.00">16. Complete</text>
+</g>
+<!-- TargetService -->
+<g id="node20" class="node">
+<title>TargetService</title>
+<path fill="#eceff1" stroke="black" d="M188.92,-188.65C188.92,-188.65 132.48,-188.65 132.48,-188.65 126.48,-188.65 120.48,-182.65 120.48,-176.65 120.48,-176.65 120.48,-164.65 120.48,-164.65 120.48,-158.65 126.48,-152.65 132.48,-152.65 132.48,-152.65 188.92,-152.65 188.92,-152.65 194.92,-152.65 200.92,-158.65 200.92,-164.65 200.92,-164.65 200.92,-176.65 200.92,-176.65 200.92,-182.65 194.92,-188.65 188.92,-188.65"/>
+<text xml:space="preserve" text-anchor="middle" x="160.7" y="-173.95" font-family="Helvetica Neue" font-size="11.00">Target Service</text>
+<text xml:space="preserve" text-anchor="middle" x="160.7" y="-160.75" font-family="Helvetica Neue" font-size="11.00">(Gmail, etc.)</text>
+</g>
+<!-- PasswordReset&#45;&gt;TargetService -->
+<g id="edge23" class="edge">
+<title>PasswordReset-&gt;TargetService</title>
+<path fill="none" stroke="#e91e63" stroke-width="2" d="M115.34,-216.41C115.51,-211.86 116.16,-206.97 119.8,-200"/>
+<polygon fill="#e91e63" stroke="#e91e63" stroke-width="2" points="122.74,-201.9 125.21,-191.6 116.85,-198.12 122.74,-201.9"/>
+<text xml:space="preserve" text-anchor="middle" x="139.09" y="-199.65" font-family="Helvetica Neue" font-size="10.00">14. Reset</text>
+</g>
+<!-- ContainerDestroy&#45;&gt;PasswordVault -->
+<g id="edge26" class="edge">
+<title>ContainerDestroy-&gt;PasswordVault</title>
+<path fill="none" stroke="#009688" stroke-width="3" d="M68.69,-152.49C75.01,-144.14 82.77,-133.88 89.95,-124.39"/>
+<polygon fill="#009688" stroke="#009688" stroke-width="3" points="92.61,-126.68 95.85,-116.6 87.02,-122.46 92.61,-126.68"/>
+<text xml:space="preserve" text-anchor="middle" x="120.73" y="-135.65" font-family="Helvetica Neue" font-size="10.00">17. Store New</text>
+<text xml:space="preserve" text-anchor="middle" x="120.73" y="-123.65" font-family="Helvetica Neue" font-size="10.00">Credential</text>
+</g>
+<!-- HIBP&#45;&gt;DataNormalization -->
+<g id="edge8" class="edge">
+<title>HIBP-&gt;DataNormalization</title>
+<path fill="none" stroke="#9c27b0" stroke-width="2" d="M179.43,-741.31C182.85,-736.08 187.03,-730.43 196.6,-722.04"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="2" points="198.68,-724.86 204.19,-715.81 194.24,-719.45 198.68,-724.86"/>
+<text xml:space="preserve" text-anchor="middle" x="220.85" y="-724.55" font-family="Helvetica Neue" font-size="10.00">5. Raw Data</text>
+</g>
+<!-- DeHashed&#45;&gt;DataNormalization -->
+<g id="edge9" class="edge">
+<title>DeHashed-&gt;DataNormalization</title>
+<path fill="none" stroke="#9c27b0" stroke-width="2" d="M247.87,-741.28C247.64,-736.71 247.4,-731.64 247.16,-726.61"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="2" points="250.66,-726.57 246.68,-716.75 243.67,-726.91 250.66,-726.57"/>
+<text xml:space="preserve" text-anchor="middle" x="272.32" y="-724.55" font-family="Helvetica Neue" font-size="10.00">5. Raw Data</text>
+</g>
+<!-- BreachSources&#45;&gt;DataNormalization -->
+<g id="edge10" class="edge">
+<title>BreachSources-&gt;DataNormalization</title>
+<path fill="none" stroke="#9c27b0" stroke-width="2" d="M319.57,-741.06C313.25,-734.42 305.56,-727.12 297.7,-721.55 297.35,-721.3 296.99,-721.05 296.64,-720.8"/>
+<polygon fill="#9c27b0" stroke="#9c27b0" stroke-width="2" points="298.6,-717.9 288.26,-715.63 294.92,-723.86 298.6,-717.9"/>
+<text xml:space="preserve" text-anchor="middle" x="336.86" y="-724.55" font-family="Helvetica Neue" font-size="10.00">5. Raw Data</text>
+</g>
+<!-- TargetService&#45;&gt;PasswordReset -->
+<g id="edge24" class="edge">
+<title>TargetService-&gt;PasswordReset</title>
+<path fill="none" stroke="#e91e63" stroke-width="2" stroke-dasharray="5,2" d="M160.8,-188.91C160.33,-193.56 159.36,-198.57 155.26,-205.8"/>
+<polygon fill="#e91e63" stroke="#e91e63" stroke-width="2" points="152.57,-203.52 149.88,-213.77 158.37,-207.44 152.57,-203.52"/>
+<text xml:space="preserve" text-anchor="middle" x="183.78" y="-199.65" font-family="Helvetica Neue" font-size="10.00">15. Confirm</text>
+</g>
+<!-- legend -->
+<g id="node25" class="node">
+<title>legend</title>
+<path fill="none" stroke="none" d="M655.44,-1196.75C655.44,-1196.75 441.97,-1196.75 441.97,-1196.75 435.97,-1196.75 429.97,-1190.75 429.97,-1184.75 429.97,-1184.75 429.97,-1050.35 429.97,-1050.35 429.97,-1044.35 435.97,-1038.35 441.97,-1038.35 441.97,-1038.35 655.44,-1038.35 655.44,-1038.35 661.44,-1038.35 667.44,-1044.35 667.44,-1050.35 667.44,-1050.35 667.44,-1184.75 667.44,-1184.75 667.44,-1190.75 661.44,-1196.75 655.44,-1196.75"/>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1178.85" font-family="Helvetica Neue" font-weight="bold" font-size="11.00">Flow Type</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1178.85" font-family="Helvetica Neue" font-weight="bold" font-size="11.00">Description</text>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1156.65" font-family="Helvetica Neue" font-size="11.00" fill="#4caf50">━━━</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1156.65" font-family="Helvetica Neue" font-size="11.00">Primary Query Path                    </text>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1135.45" font-family="Helvetica Neue" font-size="11.00" fill="#2196f3">━━━</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1135.45" font-family="Helvetica Neue" font-size="11.00">Result Display Path                    </text>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1114.25" font-family="Helvetica Neue" font-size="11.00" fill="#e91e63">━━━</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1114.25" font-family="Helvetica Neue" font-size="11.00">Remediation Path                    </text>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1093.05" font-family="Helvetica Neue" font-size="11.00" fill="#9c27b0">━━━</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1093.05" font-family="Helvetica Neue" font-size="11.00">Data Processing                    </text>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1071.85" font-family="Helvetica Neue" font-size="11.00" fill="#009688">━━━</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1071.85" font-family="Helvetica Neue" font-size="11.00">Quarantine/Vault Path                    </text>
+<text xml:space="preserve" text-anchor="start" x="442.97" y="-1050.65" font-family="Helvetica Neue" font-size="11.00" fill="gray">┅┅┅</text>
+<text xml:space="preserve" text-anchor="start" x="500.77" y="-1050.65" font-family="Helvetica Neue" font-size="11.00">Logging/Monitoring                    </text>
+<polygon fill="none" stroke="black" points="437.97,-1042.35 437.97,-1192.75 659.44,-1192.75 659.44,-1042.35 437.97,-1042.35"/>
+</g>
+</g>
+</svg>

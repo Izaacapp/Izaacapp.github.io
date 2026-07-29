@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Manager</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-family: monospace;
+            padding: 20px;
+        }
+        button {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #output {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            color: #ff9999;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Permanent Deletion Manager</h1>
+    <p class="warning">⚠️ WARNING: This will permanently modify your source code!</p>
+    
+    <div id="output">
+        <h3>Deleted Items:</h3>
+        <pre id="deletedList">Loading...</pre>
+    </div>
+
+    <button onclick="exportDeleted()">Export Deleted IDs to File</button>
+    <button onclick="clearDeleted()">Clear All Deletions</button>
+    
+    <div id="instructions" style="margin-top: 30px; padding: 20px; background: #2a2a2a;">
+        <h3>To permanently remove items from source code:</h3>
+        <ol>
+            <li>Delete items normally using X button in the app</li>
+            <li>Click "Export Deleted IDs to File" above</li>
+            <li>Copy the JSON output</li>
+            <li>Create a file called <code>deletedItems.json</code> in project root</li>
+            <li>Paste the JSON into that file</li>
+            <li>Run: <code>node scripts/cleanDeletedItems.js</code></li>
+        </ol>
+    </div>
+
+    <script>
+        function loadDeleted() {
+            const deleted = localStorage.getItem('permanentlyDeleted');
+            const ids = deleted ? JSON.parse(deleted) : [];
+            document.getElementById('deletedList').textContent = 
+                ids.length > 0 ? JSON.stringify(ids, null, 2) : 'No items deleted yet';
+        }
+
+        function exportDeleted() {
+            const deleted = localStorage.getItem('permanentlyDeleted');
+            const ids = deleted ? JSON.parse(deleted) : [];
+            
+            // Create downloadable JSON
+            const blob = new Blob([JSON.stringify(ids, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'deletedItems.json';
+            a.click();
+            
+            alert(`Exported ${ids.length} deleted IDs. Save this file to project root and run: node scripts/cleanDeletedItems.js`);
+        }
+
+        function clearDeleted() {
+            if (confirm('Clear all deletion records? (Items will reappear on refresh)')) {
+                localStorage.removeItem('permanentlyDeleted');
+                loadDeleted();
+                alert('Deletion records cleared. Refresh the app to see items again.');
+            }
+        }
+
+        // Load on page load
+        loadDeleted();
+        
+        // Update every second
+        setInterval(loadDeleted, 1000);
+    </script>
+</body>
+</html>
